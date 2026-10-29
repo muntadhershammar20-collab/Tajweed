@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tajweed Studio · استوديو التجويد</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap">
+<style>
+:root{--bg:#f6f3ea;--card:#fffdf8;--ink:#1d2923;--mut:#66726b;--acc:#16664b;--accb:#e0f0e8;--gold:#a97a22;--goldb:#f7ecd2;--ok:#1b7a45;--okb:#dcf3e4;--bad:#b3392f;--badb:#fbe3df;--line:#e2dccb;--sh:0 6px 24px rgba(30,50,40,.09);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--card:#1b2321;--ink:#ece9e0;--mut:#9aa7a0;--acc:#5fc79d;--accb:#1f3a30;--gold:#e0b45c;--goldb:#3a3118;--ok:#7bd99b;--okb:#1c3a29;--bad:#f08b80;--badb:#44221e;--line:#2f3a37;--sh:0 6px 24px rgba(0,0,0,.35);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--card:#1b2321;--ink:#ece9e0;--mut:#9aa7a0;--acc:#5fc79d;--accb:#1f3a30;--gold:#e0b45c;--goldb:#3a3118;--ok:#7bd99b;--okb:#1c3a29;--bad:#f08b80;--badb:#44221e;--line:#2f3a37;--sh:0 6px 24px rgba(0,0,0,.35);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.ar{font-family:"Amiri","Traditional Arabic","Geeza Pro",serif;font-size:1.15em;direction:rtl;unicode-bidi:isolate}
+.hero{background:linear-gradient(135deg,#0e4a37,#16664b 60%,#1f7d5c);color:#fff;text-align:center;padding:30px 18px 58px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.13' stroke-width='1.2'%3E%3Crect x='16' y='16' width='40' height='40'/%3E%3Crect x='16' y='16' width='40' height='40' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='9'/%3E%3C/g%3E%3C/svg%3E"),radial-gradient(circle at 85% 85%,rgba(224,180,92,.3),transparent 45%)}
+.hero>*{position:relative}.hero .t{font-family:"Amiri",serif;font-size:2.6rem;line-height:1.3;margin:0;direction:rtl}
+.hero h1{font-size:1.1rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px}.orn{color:#e0b45c;letter-spacing:.5em}
+.hero p{margin:4px 0;opacity:.9;font-size:.92rem}.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.pills span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 12px;font-size:.82rem}
+.tg{position:absolute!important;top:12px;right:12px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.1rem}
+main{max-width:780px;margin:-30px auto 0;padding:0 14px 28px;position:relative}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px;box-shadow:var(--sh);animation:in .35s ease}
+.gh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}.gh h2{font-size:1.05rem;margin:0}.gh small{color:var(--mut);display:block;font-weight:400}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:10px}
+.chip{text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:10px 12px;cursor:pointer;font:inherit;transition:.15s;display:block}
+.chip:hover{border-color:var(--acc);transform:translateY(-1px)}.chip[aria-pressed="true"]{background:var(--accb);border-color:var(--acc)}
+.chip .r{display:flex;gap:10px;align-items:center}.ck{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:.8rem;color:transparent}
+.chip[aria-pressed="true"] .ck{background:var(--acc);border-color:var(--acc);color:var(--card)}
+.nm{display:block;font-size:1.2rem;line-height:1.3}.chip small{color:var(--mut);font-size:.78rem}
+.mb{height:5px;background:var(--line);border-radius:9px;margin-top:8px;overflow:hidden}.mb i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--acc))}
+.btn{border:1.5px solid var(--acc);background:var(--acc);color:var(--card);border-radius:12px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;transition:.15s}
+.btn:hover{filter:brightness(1.08)}.btn.g{background:transparent;color:var(--acc)}.btn:disabled{opacity:.4;cursor:default}.btn.s{padding:6px 12px;font-size:.82rem;font-weight:600}
+.bar{position:sticky;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px));box-shadow:var(--sh);z-index:5}
+.seg{display:inline-flex;border:1.5px solid var(--acc);border-radius:10px;overflow:hidden}.seg button{border:0;background:transparent;color:var(--acc);padding:6px 14px;font:inherit;cursor:pointer}.seg button[aria-pressed="true"]{background:var(--acc);color:var(--card)}
+.set{display:flex;gap:16px;align-items:center;flex-wrap:wrap}.set label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.prog{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.prog p{margin:0;color:var(--mut)}
+.ring{--s:104px;width:var(--s);height:var(--s);border-radius:50%;background:conic-gradient(var(--acc) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring b{width:calc(var(--s) - 26px);height:calc(var(--s) - 26px);border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.3rem;color:var(--acc)}
+.qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--mut);font-size:.9rem;gap:8px}
+.pb{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:14px}.pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--gold));transition:width .3s}
+.badge{display:inline-block;font-size:.78rem;border-radius:8px;padding:3px 10px;margin-bottom:10px;background:var(--accb);color:var(--acc)}.badge.p{background:var(--goldb);color:var(--gold)}
+.q{font-size:1.2rem;margin:0 0 14px;font-weight:600}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;padding:12px;margin-bottom:10px;font:inherit;cursor:pointer;transition:.15s}
+.opt:hover:not(:disabled){border-color:var(--acc);background:var(--accb)}.opt b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accb);color:var(--acc);display:grid;place-items:center;font-size:.85rem}.opt .v{flex:1}
+.opt.ok{background:var(--okb);border-color:var(--ok)}.opt.ok b{background:var(--ok);color:var(--card)}.opt.no{background:var(--badb);border-color:var(--bad)}.opt.no b{background:var(--bad);color:var(--card)}
+.fb{border-radius:14px;padding:12px 14px;background:var(--accb);border-left:5px solid var(--acc)}.fb.no{background:var(--badb);border-color:var(--bad)}.fb.ok{background:var(--okb);border-color:var(--ok)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.sl h2{margin:0 0 2px;font-size:1.25rem}.sl .sub{color:var(--mut);font-size:.88rem;margin-bottom:14px}
+.ln{padding:12px 14px;border-radius:12px;background:var(--accb);margin-bottom:10px;border-left:5px solid var(--gold)}.ln .ar{display:block;font-size:1.45em;line-height:1.5}.ln small{display:block;color:var(--mut);font-size:.9rem}
+.viz{width:100%;max-width:380px;display:block;margin:0 auto 12px}.leg{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:.9rem;margin-bottom:12px}.leg i{display:inline-block;width:18px;height:18px;border-radius:50%;color:#fff;font-style:normal;font-size:.72rem;text-align:center;line-height:18px;margin-right:6px}
+.pace{display:flex;gap:6px;margin-bottom:12px}.pace div{flex:1;text-align:center;border-radius:10px;padding:10px 2px;color:#fff;font-size:.8rem}.pace .ar{display:block;font-size:1.3em}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:12px;flex-wrap:wrap}.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--acc);width:22px;border-radius:5px}
+.rs{text-align:center}.rs .ring{margin:6px auto}.miss{border-top:1px solid var(--line);padding:10px 0;font-size:.95rem}.tb{display:flex;align-items:center;gap:8px;font-size:.88rem;margin:4px 0}.tb span{width:44%}.tb .mb{flex:1;margin:0}
+.hide{display:none!important}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:480px){.hero .t{font-size:2.1rem}.chips{grid-template-columns:1fr}}
+</style></head><body>
+<header class="hero"><button class="tg" id="tg" aria-label="Toggle theme">◐</button><p class="t">استوديو التجويد</p><h1>Tajweed Studio</h1><div class="orn">✦ ✦ ✦</div>
+<p><span class="ar">التجويد الميسر</span> · At-Tajweed al-Muyassar &nbsp;|&nbsp; <span class="ar">تحفة الأطفال</span> · Tuhfat al-Atfal</p>
+<div class="pills"><span id="p1"></span><span id="p2"></span><span id="p3"></span></div></header>
+<main>
+<div id="setup">
+ <div class="card"><div class="gh"><h2>Your progress · تقدمك<small>Saved on this device · محفوظ على جهازك</small></h2><button class="btn g s" id="rst">Reset · مسح</button></div>
+  <div class="prog"><div class="ring" id="or" style="--p:0"><b id="op">–</b></div><div><p id="ot"></p><div class="row" style="margin-top:8px"><button class="btn g s" id="wk">Select weak topics · المواضيع الضعيفة</button></div></div></div></div>
+ <div class="card"><div class="gh"><h2><span class="ar">التجويد الميسر</span> · At-Tajweed al-Muyassar<small>12 topics · ١٢ موضوعًا</small></h2><button class="btn g s gt" data-g="m">Toggle · تبديل</button></div><div class="chips" id="g1"></div></div>
+ <div class="card"><div class="gh"><h2><span class="ar">تحفة الأطفال</span> · Tuhfat al-Atfal<small>First 4 parts · الأجزاء الأربعة الأولى</small></h2><button class="btn g s gt" data-g="t">Toggle · تبديل</button></div><div class="chips" id="g2"></div></div>
+ <div class="card set"><div>Length · الطول <span class="seg" id="sg"><button data-n="10" aria-pressed="true">10</button><button data-n="20" aria-pressed="false">20</button><button data-n="0" aria-pressed="false">All</button></span></div><label><input type="checkbox" id="mo"> Missed only · الأخطاء فقط</label></div>
+ <div class="bar"><b id="cnt"></b><div class="row" style="margin:0"><button class="btn g" id="st">Study slides · شرائح</button><button class="btn" id="go">Start quiz · ابدأ</button></div></div>
+</div>
+<div id="study" class="hide"><div class="qtop"><span id="sn"></span><button class="btn g s" id="sx">Exit · خروج</button></div><div class="pb"><i id="sp"></i></div><div class="card sl" id="sc"></div><div class="row"><button class="btn g" id="pv">← Back · السابق</button><button class="btn" id="nx2">Next · التالي →</button></div><div class="dots" id="dt"></div></div>
+<div id="quiz" class="hide"><div class="qtop"><span id="qn"></span><span id="sk"></span><button class="btn g s" id="ex">Exit · خروج</button></div><div class="pb"><i id="pb"></i></div><div class="card" id="qc"></div></div>
+<div id="res" class="hide card"></div>
+</main>
+<script>
+const T=[["m1","التجويد: التعريف والثمرة","Definition & Purpose of Tajweed"],["m12","مراتب التلاوة","Levels of Recitation Speed"],["m3","اللحن","Errors in Recitation (Lahn)"],["m2","الاستعاذة والبسملة","Isti‘adha & Basmalah"],["m4","مخارج الحروف","Articulation Points (Makharij)"],["m5","صفات الحروف","Letter Characteristics (Sifat)"],["m6","أحكام النون الساكنة والتنوين","Noon Sakinah & Tanween"],["m8","الغنة","Ghunnah"],["m7","أحكام الميم الساكنة","Meem Sakinah"],["m9","المد","Madd (Prolongation)"],["m10","التفخيم والترقيق","Heavy & Light Letters"],["m11","الوقف","Waqf (Stopping)"],["t1","أحكام النون الساكنة والتنوين","Noon Sakinah & Tanween"],["t2","النون والميم المشددتان","Mushaddad Noon & Meem"],["t3","أحكام الميم الساكنة","Meem Sakinah"],["t4","لام التعريف والمثلان والمتجانسان والمتقاربان","Lam of Definiteness & the Three Idgham Pairs"]];
+const TH="القسم النظري · Theory (al-Qism an-Nazari)",PR="القسم العملي التطبيقي · Practical Application (al-Qism al-‘Amali at-Tatbeeqi)";
+// [topic, kind(0 theory,1 practical), question, options, correct index, explanation]
+const Q=[
+["m1",0,"Linguistically, التجويد means:",["التحسين|Improving, making excellent","التطويل|Lengthening","التوقف|Pausing","الإخفاء|Concealing"],0,"التجويد comes from جوّد: to make good or excellent."],
+["m1",0,"The fruit (الثمرة) of tajweed is:",["Protecting the tongue from error in recitation","Speeding up memorization","Learning Arabic grammar rules","Understanding the verses’ meanings"],0,"Tajweed preserves the tongue from اللحن when reciting Allah’s words."],
+["m1",0,"Passing recitation directly from teacher to student is called:",["التلقي|Talaqqi (direct reception)","التفسير|Tafsir (exegesis)","التدبر|Tadabbur (reflection)","الحفظ|Hifz (memorization)"],0,"Tajweed is taken through التلقي and مشافهة, not books alone."],
+["m2",0,"The wording of الاستعاذة is taken from which surah?",["Surat an-Nahl","Surat al-Fatiha","Surat al-Baqarah","Surat an-Nas"],0,"An-Nahl 98: «فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ»."],
+["m2",0,"The البسملة is NOT recited at the start of:",["Surat at-Tawbah","Surat al-Ikhlas","Surat al-Kahf","Surat Yaseen"],0,"At-Tawbah (Bara’ah) is the one surah without a basmalah."],
+["m2",1,"Which phrase is الاستعاذة?",["أعوذ بالله من الشيطان الرجيم|I seek refuge in Allah from the accursed Satan","أستغفر الله العظيم|I seek forgiveness from Allah the Mighty","حسبنا الله ونعم الوكيل|Allah is sufficient for us","سبحان الله وبحمده|Glory and praise to Allah"],0,"The standard form of the isti‘adha."],
+["m2",0,"The ruling on الاستعاذة before recitation, as taught in this course, is:",["واجب|Obligatory (wajib)","سنة|Sunnah (recommended)","حرام|Forbidden","مكروه|Disliked"],0,"Taught here as wajib. Scholars differ (many hold it sunnah), so confirm with your teacher."],
+["m3",0,"اللحن الجلي is:",["A clear error affecting letters or vowels","A subtle flaw in applying a rule","An error only in the stopping place","A mistake in verse numbering"],0,"Jali errors are noticed by scholars and non-scholars alike."],
+["m3",0,"اللحن الخفي is:",["A subtle flaw in applying tajweed rules","A clear change of a letter","A change of vowel","Skipping a word"],0,"Khafi errors need a trained ear, such as weak ghunnah or wrong heaviness."],
+["m3",1,"Reading the ق in «قُلْ» as ك is:",["لحن جلي|Clear error","لحن خفي|Subtle error","لا لحن|No error","مد زائد|Extra madd"],0,"Changing a letter is a lahn jali."],
+["m3",1,"Slightly shortening a ghunnah is:",["لحن خفي|Subtle error","لحن جلي|Clear error","لا لحن|No error","إدغام|Idgham"],0,"It affects the rule’s quality, not the letter or vowel."],
+["m4",0,"How many general areas (المخارج العامة) are there?",["5","3","7","17"],0,"الجوف، الحلق، اللسان، الشفتان، الخيشوم."],
+["m4",1,"The madd letters ا و ي exit from:",["الجوف|Oral cavity","الحلق|Throat","الشفتان|Lips","الخيشوم|Nasal cavity"],0,"They have no fixed point, only the open space of the الجوف."],
+["m4",1,"ع and ح exit from:",["وسط الحلق|Middle throat","أقصى الحلق|Deepest throat","أدنى الحلق|Nearest throat","اللسان|Tongue"],0,"ء ه deepest; ع ح middle; غ خ nearest."],
+["m4",1,"Which set exits from the lips (الشفتان)?",["ب م و","ق ك","ض ل ن","ع ح"],0,"ب م و; ف uses the lower lip and upper teeth."],
+["m5",0,"The letters of القلقلة are:",["ق ط ب ج د","ص ز س","ي ر م ل و ن","ء ه ع ح غ خ"],0,"Mnemonic: قُطْبُ جَد."],
+["m5",1,"The letters ص ز س have the characteristic:",["الصفير|Safir (whistling)","الغنة|Ghunnah","الاستطالة|Istitalah","التفشي|Tafashshi"],0,"A whistling sound, with no opposite characteristic."],
+["m5",0,"The opposite of الجهر is:",["الهمس|Hams (whispering)","الشدة|Shiddah","الاستعلاء|Isti‘la","الإطباق|Itbaq"],0,"Jahr (breath blocked) vs hams (breath flows)."],
+["m5",1,"Which letter has الهمس?",["س","ج","ع","ض"],0,"Hams letters: فَحَثَّهُ شَخْصٌ سَكَتَ."],
+["m6",1,"The rule in «مَنْ آمَنَ» is:",["إظهار حلقي|Throat izhar","إدغام بغنة|Idgham with ghunnah","إقلاب|Iqlab","إخفاء|Ikhfa"],0,"Noon sakinah before a throat letter is clear."],
+["m6",1,"The rule in «مِن بَعْدِ» is:",["إقلاب|Iqlab","إظهار|Izhar","إدغام|Idgham","إخفاء|Ikhfa"],0,"Noon becomes a hidden meem with ghunnah before ب."],
+["m6",1,"The rule in «مَن يَقُولُ» is:",["إدغام بغنة|Idgham with ghunnah","إدغام بلا غنة|Idgham without ghunnah","إقلاب|Iqlab","إظهار|Izhar"],0,"ي is among يَنْمُو: idgham with ghunnah."],
+["m6",1,"The rule in «مِن رَّبِّهِمْ» is:",["إدغام بلا غنة|Idgham without ghunnah","إدغام بغنة|Idgham with ghunnah","إخفاء|Ikhfa","إظهار|Izhar"],0,"ل and ر merge with no ghunnah."],
+["m7",1,"The rule in «تَرْمِيهِم بِحِجَارَةٍ» is:",["إخفاء شفوي|Labial ikhfa","إظهار شفوي|Labial izhar","إدغام صغير|Minor idgham","إقلاب|Iqlab"],0,"Meem sakinah before ب is hidden with ghunnah."],
+["m7",0,"Which is NOT a rule of meem sakinah?",["إقلاب|Iqlab","إخفاء شفوي|Labial ikhfa","إظهار شفوي|Labial izhar","إدغام صغير|Minor idgham"],0,"Iqlab belongs to noon sakinah and tanween."],
+["m7",1,"The rule in «أَم مَّن يَكُونُ» is:",["إدغام متماثلين صغير|Minor idgham of mithlayn","إخفاء شفوي|Labial ikhfa","إظهار شفوي|Labial izhar","إقلاب|Iqlab"],0,"Meem sakinah meets meem."],
+["m7",1,"The rule in «أَنْعَمْتَ» is:",["إظهار شفوي|Labial izhar","إخفاء شفوي|Labial ikhfa","إدغام صغير|Minor idgham","إقلاب|Iqlab"],0,"Meem sakinah before any letter except ب or م is clear."],
+["m8",0,"The standard length of الغنة is:",["2 harakat","4 harakat","6 harakat","No fixed length"],0,"About two harakat."],
+["m8",1,"In «إِنَّ», the noon has:",["غنة مشددة|Ghunnah mushaddadah","إظهار|Izhar","إخفاء|Ikhfa","قلقلة|Qalqalah"],0,"A shaddah on noon or meem requires ghunnah."],
+["m8",0,"Ghunnah is inherent to which letters?",["ن م","ل ر","ب ت","ك ق"],0,"The noon and the meem."],
+["m8",0,"Ghunnah comes from:",["الخيشوم|Nasal cavity","الحلق|Throat","اللسان|Tongue","الشفتان|Lips"],0,"The nasal cavity, not the mouth."],
+["m9",0,"The natural madd (المد الطبيعي) is held for:",["2 harakat","4 harakat","6 harakat","1 haraka"],0,"The base madd with no sukoon or hamza after it."],
+["m9",1,"«جَاء» has which madd?",["متصل|Connected","منفصل|Separated","لازم|Necessary","طبيعي|Natural"],0,"Hamza follows the madd letter in the same word."],
+["m9",1,"«يَا أَيُّهَا» has which madd?",["منفصل|Separated","متصل|Connected","لازم|Necessary","طبيعي|Natural"],0,"The madd letter ends one word and the hamza begins the next."],
+["m9",0,"The madd letter و must be preceded by:",["ضمة|Dammah","فتحة|Fatha","كسرة|Kasrah","سكون|Sukoon"],0,"Madd letters: ا after fatha, و after dammah, ي after kasrah."],
+["m10",0,"How many الاستعلاء (raised) letters are there?",["7","3","5","10"],0,"خ ص ض غ ط ق ظ: «خُصَّ ضَغْطٍ قِظْ»."],
+["m10",1,"The lam of Allah in «بِسْمِ اللَّهِ» is:",["مرقق|Light","مفخم|Heavy","مقلقل|Echoing","مدغم|Assimilated"],0,"Light after a kasrah."],
+["m10",1,"The lam of Allah in «قَالَ اللَّهُ» is:",["مفخم|Heavy","مرقق|Light","مدغم|Assimilated","مخفى|Hidden"],0,"Heavy after fathah or dammah."],
+["m10",0,"Which letter is a heavy letter?",["ط","ث","ز","س"],0,"ط is among the seven isti‘la letters."],
+["m11",0,"The four categories of waqf are:",["تام، كافٍ، حسن، قبيح","قصير، طويل، متوسط، لازم","جلي، خفي، تام، كافٍ","إظهار، إدغام، إقلاب، إخفاء"],0,"Complete, sufficient, good, and ugly."],
+["m11",1,"Stopping on «عَلِيمًا» is pronounced:",["عَلِيمَا","عَلِيمْ","عَلِيمُ","عَلِيمَهْ"],0,"Tanween fathah becomes alif at waqf."],
+["m11",1,"Stopping on «رَحْمَةٌ» is pronounced:",["رَحْمَهْ","رَحْمَتْ","رَحْمَةً","رَحْمَا"],0,"Ta marbuta becomes ha at waqf."],
+["m11",0,"الوقف القبيح is:",["Stopping where the meaning is broken or distorted","Stopping after a complete sentence","Stopping where the meaning is complete","Stopping only at a verse end"],0,"It should be avoided unless one is forced to stop."],
+["t1",0,"How many rules does noon sakinah/tanween have?",["4","2","3","6"],0,"الإظهار، الإدغام، الإقلاب، الإخفاء."],
+["t1",0,"The letters of الإظهار الحلقي are:",["ء هـ ع ح غ خ","ي ر م ل و ن","ب","ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ"],0,"Six throat letters."],
+["t1",0,"The letters of الإدغام are:",["ي ر م ل و ن","ء هـ ع ح غ خ","ب","ص ذ ث ك ج ش ق س د ط ز ف ت ض ظ"],0,"Mnemonic: يَرْمَلُون."],
+["t1",0,"The only letter of الإقلاب is:",["ب","م","ن","و"],0,"Noon becomes a hidden meem before ب."],
+["t2",0,"The ruling on a mushaddad noon or meem is:",["Ghunnah is required","Izhar","Qalqalah","Optional madd"],0,"Called حرف غنة مشدد."],
+["t2",1,"In «ثُمَّ», the ghunnah is on:",["The mushaddad meem","The ث","The dammah","None"],0,"The shaddah on meem requires ghunnah."],
+["t2",1,"In «الْجَنَّةَ», the letter requiring ghunnah is:",["ن","ج","ة","ل"],0,"The mushaddad noon."],
+["t2",0,"Ghunnah mushaddadah is held for:",["2 harakat","4 harakat","6 harakat","1 haraka"],0,"About two harakat."],
+["t3",0,"The three rules of meem sakinah are:",["إخفاء، إدغام، إظهار شفوي","إظهار، إدغام، إقلاب","إخفاء، إقلاب، إظهار","مد، قصر، غنة"],0,"Labial ikhfa, minor idgham, labial izhar."],
+["t3",1,"The rule in «لَهُم مَّا» is:",["إدغام صغير|Minor idgham","إخفاء شفوي|Labial ikhfa","إظهار شفوي|Labial izhar","إقلاب|Iqlab"],0,"Meem sakinah into meem, with ghunnah."],
+["t3",1,"The rule in «هُمْ فِيهَا» is:",["إظهار شفوي|Labial izhar","إخفاء شفوي|Labial ikhfa","إدغام صغير|Minor idgham","إقلاب|Iqlab"],0,"Meem before ف is clear."],
+["t3",1,"The rule in «يَعْتَصِم بِاللَّهِ» is:",["إخفاء شفوي|Labial ikhfa","إظهار شفوي|Labial izhar","إدغام صغير|Minor idgham","إقلاب|Iqlab"],0,"Meem sakinah before ب."],
+["t4",1,"The «الـ» in «الْقَمَر» is:",["لام قمرية|Lunar lam","لام شمسية|Solar lam","مد|Madd","غنة|Ghunnah"],0,"Pronounced clearly."],
+["t4",1,"The «الـ» in «الشَّمْس» is:",["لام شمسية|Solar lam","لام قمرية|Lunar lam","مد|Madd","غنة|Ghunnah"],0,"The lam assimilates into the next letter."],
+["t4",1,"The rule in «قَالَت طَّائِفَةٌ» is:",["متجانسان|Mutajanisayn","متماثلان|Mithlayn","متقاربان|Mutaqaribayn","إقلاب|Iqlab"],0,"Same articulation point, different characteristics."],
+["t4",1,"The rule in «قُل رَّبِّ» is:",["متقاربان|Mutaqaribayn","متماثلان|Mithlayn","متجانسان|Mutajanisayn","إقلاب|Iqlab"],0,"Close articulation points."],
+["m1",0,"The full technical definition of التجويد is:",["إخراج كل حرف من مخرجه مع إعطائه حقه ومستحقه|Bringing each letter out from its articulation point while giving it its right and what it deserves","إخراج كل حرف من مخرجه مع إهمال صفاته وأحكامه|Bringing each letter out from its articulation point while neglecting its characteristics and rules","إعطاء كل حرف حقه ومستحقه مع إهمال المخارج|Giving each letter its right and what it deserves while neglecting the articulation points","تحسين الصوت بالقرآن وتلحينه دون اعتبار الأحكام|Beautifying the voice and melodizing the Qur’an regardless of the rules"],0,"Three elements: the مخرج (articulation point), the حق (right), and the مستحق (what it deserves)."],
+["m1",0,"حق الحرف (the letter’s “right”) refers to:",["صفاته اللازمة|Inherent characteristics, e.g. jahr or shiddah","صفاته العارضة|Incidental characteristics, e.g. tarqiq or idgham","شكله المكتوب|Its written shape and its dots","ترتيبه|Its position in the alphabet"],0,"The haqq is the set of صفات لازمة that never leave the letter."],
+["m1",0,"مستحق الحرف (what the letter “deserves”) refers to:",["صفاته العارضة|Incidental characteristics that arise in certain cases","صفاته اللازمة|Inherent characteristics that never leave the letter","مخرجه|The point from which it exits the mouth","اسمه|The name by which the letter is called"],0,"Examples: تفخيم، ترقيق، إدغام، إخفاء، غنة."],
+["m1",1,"Making the ر light in «رِزْقًا» (because of the kasrah) is giving the letter its:",["مستحقه|What it deserves (incidental)","حقه|Its right (inherent)","مخرجه|Its articulation point","مده|Its madd"],0,"Tarqiq after a kasrah is an incidental change."],
+["m12",0,"How many levels (مراتب) of recitation speed are there?",["4","2","3","5"],0,"التحقيق، الترتيل، التدوير، الحدر."],
+["m12",0,"The slowest level, used for teaching and training, is:",["التحقيق|Tahqiq","الحدر|Hadr","التدوير|Tadwir","الترتيل|Tartil"],0,"Slow, deliberate recitation with full madd and careful articulation."],
+["m12",0,"The fastest level, which still keeps the tajweed rules, is:",["الحدر|Hadr","التحقيق|Tahqiq","التدوير|Tadwir","الترتيل|Tartil"],0,"Quick recitation with madd shortened but every rule kept."],
+["m12",0,"التدوير (tadwir) is:",["A medium pace between tahqiq and hadr","The slowest pace, used to train students","The fastest pace, with madd shortened","A pace that ignores the tajweed rules"],0,"Moderate speed with moderate madd."],
+["m12",0,"«وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا» is in Surat:",["Al-Muzzammil","Al-Mudaththir","Al-‘Alaq","Al-Qalam"],0,"Al-Muzzammil 73:4: the command to recite with tartil."],
+["m12",1,"Which level is measured, with reflection on the meanings, and is the one commanded in the Qur’an?",["الترتيل|Tartil","الحدر|Hadr","التدوير|Tadwir","التحقيق|Tahqiq"],0,"Tartil means tajweed with calm, thoughtful pacing (tadabbur)."],
+["m4",0,"المخرج (makhraj) means:",["موضع خروج الحرف|The place from which a letter is produced","صفة الحرف|A characteristic of the letter","حركة الحرف|The vowel on the letter","رسم الحرف|The written form of the letter"],0,"Linguistically a place of exit; technically the place where a letter is produced and distinguished from others."],
+["m4",0,"How many specific makharij (المخارج الخاصة) are there, per the preferred view of al-Khalil?",["17","14","16","28"],0,"1 جوف + 3 حلق + 10 لسان + 2 شفتان + 1 خيشوم."],
+["m4",0,"How many specific makharij does the tongue (اللسان) have?",["10","3","5","7"],0,"Ten makharij, covering 18 letters."],
+["m4",0,"How many specific makharij does the throat (الحلق) have?",["3","2","5","6"],0,"Deepest, middle, and nearest, with six letters in total."],
+["m4",0,"To test a letter’s makhraj, we pronounce it with:",["سكون بعد همزة متحركة|Sukoon after a vowelled hamza","مد طويل بعده|A long madd after it","غنة بعده|Ghunnah after it","وقف بالإشمام|Waqf with ishmam"],0,"For example أَبْ، أَتْ، أَقْ."],
+["m4",0,"Why is the makhraj of الجوف called مقدر (estimated)?",["It has no fixed contact point, only open air space","It has a fixed contact point at the tongue tip","It has a fixed contact point at the lips","It has a fixed contact point in the nose"],0,"The madd letters flow through empty space with no contact point."],
+["m4",1,"ث ذ ظ exit from:",["The tongue tip and the edges of the upper front teeth","The back of the tongue and the soft palate","The middle of the tongue and the hard palate","The side of the tongue and the upper molars"],0,"The tongue tip with the upper incisors."],
+["m4",1,"ص س ز exit from:",["The tongue tip and the edges of the lower front teeth","The tongue tip and the edges of the upper front teeth","The back of the tongue and the soft palate","The middle of the tongue and the hard palate"],0,"They sit just behind the lower incisors."],
+["m4",1,"ض exits from:",["The side of the tongue and the upper molars","The tongue tip and the upper front teeth","The back of the tongue and the soft palate","Both lips pressed together"],0,"The edge (حافة) of the tongue, from either side."],
+["m4",1,"ق exits from:",["The back of the tongue and the soft palate","The middle of the tongue and the hard palate","The tongue tip and the upper gums","The side of the tongue and the molars"],0,"ك exits just slightly forward of ق."],
+["m4",1,"ج ش ي (as a consonant) exit from:",["The middle of the tongue and the hard palate","The back of the tongue and the soft palate","The tongue tip and the upper gums","The side of the tongue and the molars"],0,"The middle of the tongue."],
+["m4",1,"ف exits from:",["The inside of the lower lip and the upper front teeth","Both lips pressed together","The tip of the tongue and the upper gums","The back of the tongue and the soft palate"],0,"Unlike ب م و, which use both lips."],
+["m4",1,"Which letters exit from the deepest throat (أقصى الحلق)?",["ء هـ","ع ح","غ خ","ق ك"],0,"ع ح are the middle; غ خ are the nearest to the mouth."]
+];
+// Study slides: each line is "Arabic|English"
+const S={
+m1:["التجويد لغةً: التحسين|Linguistically: to make something good","اصطلاحًا: إخراج كل حرف من مخرجه وإعطاؤه حقه ومستحقه|Technically: bringing each letter out from its makhraj while giving it its right (haqq) and what it deserves (mustahaqq)","حق الحرف: صفاته اللازمة، كالجهر والاستعلاء|Haqq: the inherent characteristics, e.g. jahr, isti‘la","مستحق الحرف: صفاته العارضة، كالتفخيم والترقيق والإخفاء|Mustahaqq: the incidental characteristics, e.g. tafkhim, tarqiq, ikhfa","ثمرته: حفظ اللسان من اللحن|Fruit: protecting the tongue from error","يؤخذ بالتلقي والمشافهة|Learned by talaqqi, directly from a teacher"],
+m12:["أربع مراتب للتلاوة|Four levels of recitation speed","التحقيق: أبطأ المراتب، للتعليم والتدريب|Tahqiq: the slowest, for teaching and training","الترتيل: تأنٍّ وتدبر|Tartil: measured and reflective","التدوير: بين التحقيق والحدر|Tadwir: the medium pace","الحدر: أسرع المراتب مع حفظ الأحكام|Hadr: the fastest, with all rules kept","﴿وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا﴾ المزمل ٤|Al-Muzzammil 73:4"],
+m3:["اللحن: الخطأ في القراءة|Lahn: an error in recitation","اللحن الجلي: يخل بالحرف أو الحركة|Jali: clear, affects a letter or vowel","اللحن الخفي: يخل بالأحكام والصفات|Khafi: subtle, affects rules or characteristics","مثال الجلي: كسر الكاف في «إِيَّاكَ»|Jali example: a kasrah on the kaf of «إِيَّاكَ»","مثال الخفي: تقصير الغنة|Khafi example: shortening the ghunnah"],
+m2:["الاستعاذة: أعوذ بالله من الشيطان الرجيم|Isti‘adha: I seek refuge in Allah from the accursed Satan","دليلها: سورة النحل ٩٨|Source: Surat an-Nahl, verse 98","حكمها في هذه الدورة: واجب|Ruling taught in this course: wajib (scholars differ)","البسملة في أول السور إلا التوبة|The basmalah begins surahs except At-Tawbah"],
+m4:["المخرج: موضع خروج الحرف|Makhraj: the place a letter is produced","المخارج العامة خمسة|Five general areas","المخارج الخاصة سبعة عشر|17 specific: جوف 1، حلق 3، لسان 10، شفتان 2، خيشوم 1","اختبار المخرج: همزة متحركة ثم الحرف ساكنًا|Test: a vowelled hamza, then the letter with sukoon","الحلق: ء هـ أقصى؛ ع ح وسط؛ غ خ أدنى|Throat: ء هـ deepest; ع ح middle; غ خ nearest","اللسان: ق ك أقصى؛ ج ش ي وسط؛ ض حافة|Tongue: ق ك back; ج ش ي middle; ض side","ث ذ ظ مع الثنايا العليا؛ ص س ز مع السفلى|ث ذ ظ upper incisors; ص س ز lower incisors","الشفتان: ب م و؛ ف شفة وأسنان|Lips: ب م و; ف lip and teeth"],
+m5:["القلقلة: قطب جد|Qalqalah: ق ط ب ج د","الهمس: فحثه شخص سكت|Hams letters: ف ح ث هـ ش خ ص س ك ت","الجهر ضد الهمس|Jahr is the opposite of hams","الاستعلاء: خص ضغط قظ|Isti‘la: the seven heavy letters","الصفير: ص ز س|Safir: ص ز س","الصفات اللازمة هي حق الحرف|Inherent sifat are the letter’s haqq"],
+m6:["الإظهار: ء هـ ع ح غ خ|Izhar: six throat letters","الإدغام: ي ر م ل و ن|Idgham: يرملون","الإقلاب: الباء فقط|Iqlab: ب only","الإخفاء: خمسة عشر حرفًا|Ikhfa: fifteen letters","«مَنْ آمَنَ» إظهار؛ «مِن بَعْدِ» إقلاب|«مَنْ آمَنَ» izhar; «مِن بَعْدِ» iqlab"],
+m8:["الغنة صوت يخرج من الخيشوم|Ghunnah: a sound from the nasal cavity","مقدارها حركتان|About two harakat","تلزم النون والميم المشددتين|Required on mushaddad noon and meem","«إِنَّ» و«ثُمَّ»|Examples: «إِنَّ» and «ثُمَّ»"],
+m7:["إخفاء شفوي: قبل الباء|Labial ikhfa: before ب","إدغام صغير: قبل الميم|Minor idgham: before م","إظهار شفوي: قبل بقية الحروف|Labial izhar: before the rest","«تَرْمِيهِم بِحِجَارَةٍ» إخفاء|«تَرْمِيهِم بِحِجَارَةٍ» ikhfa","«لَهُم مَّا» إدغام؛ «هُمْ فِيهَا» إظهار|«لَهُم مَّا» idgham; «هُمْ فِيهَا» izhar"],
+m9:["المد الطبيعي: حركتان|Natural madd: two harakat","حروف المد: ا و ي|Madd letters: ا و ي","المتصل: همزة بعد المد في كلمة واحدة|Muttasil: hamza after the madd in one word","المنفصل: همزة في الكلمة التالية|Munfasil: hamza in the next word","«جَاء» متصل؛ «يَا أَيُّهَا» منفصل|«جَاء» muttasil; «يَا أَيُّهَا» munfasil"],
+m10:["الاستعلاء سبعة حروف|Seven isti‘la letters","لام لفظ الجلالة مفخمة بعد الفتح والضم|The lam of Allah is heavy after fathah or dammah","ومرققة بعد الكسر|…and light after kasrah","الراء مرققة في «رِزْقًا»|Ra is light in «رِزْقًا»"],
+m11:["الوقف: تام وكاف وحسن وقبيح|Four types: tam, kafi, hasan, qabih","القبيح يفسد المعنى|Qabih distorts the meaning","تنوين الفتح يوقف عليه بالألف|Tanween fathah becomes alif at waqf","التاء المربوطة تصير هاءً|Ta marbuta becomes ha"],
+t1:["أربعة أحكام|Four rules","الإظهار: ء هـ ع ح غ خ|Izhar: ء هـ ع ح غ خ","الإدغام: يرملون|Idgham: يرملون","الإقلاب: ب|Iqlab: ب","الإخفاء: خمسة عشر حرفًا|Ikhfa: fifteen letters"],
+t2:["الغنة واجبة في النون والميم المشددتين|Ghunnah is required on mushaddad noon and meem","مقدارها حركتان|About two harakat","«ثُمَّ» و«الْجَنَّةَ»|Examples: «ثُمَّ» and «الْجَنَّةَ»"],
+t3:["ثلاثة أحكام|Three rules","إخفاء شفوي قبل الباء|Labial ikhfa before ب","إدغام صغير قبل الميم|Minor idgham before م","إظهار شفوي قبل الباقي|Labial izhar before the rest"],
+t4:["لام التعريف: قمرية وشمسية|Lam of definiteness: lunar and solar","«الْقَمَر» تظهر؛ «الشَّمْس» تدغم|«الْقَمَر» pronounced; «الشَّمْس» assimilated","المثلان: حرفان متفقان مخرجًا وصفة|Mithlayn: same articulation and characteristics","المتجانسان: اتفقا مخرجًا واختلفا صفة|Mutajanisayn: same articulation, different characteristics","المتقاربان: تقاربا مخرجًا أو صفة|Mutaqaribayn: close articulation or characteristics","«قَالَت طَّائِفَةٌ» متجانسان؛ «قُل رَّبِّ» متقاربان|Examples"]};
+const COL=["#e07a5f","#3d8fb5","#c9971c","#8e6bbf","#2f9e6e"],LG=["الجوف · Jawf (oral cavity)","الحلق · Halq (throat)","اللسان · Lisan (tongue)","الشفتان · Shafatan (lips)","الخيشوم · Khayshum (nasal)"],PT=[[150,100],[128,152],[188,118],[246,108],[202,58]];
+const V={m4:()=>'<svg viewBox="0 0 320 200" class="viz" role="img" aria-label="Schematic of the five general areas of articulation"><path d="M70 30C120-5 215 0 245 45c10 25 5 45-8 60l18 8-16 10c4 25-6 50-38 62-50 18-100 6-120-30C60 120 50 60 70 30Z" fill="var(--accb)" stroke="var(--acc)" stroke-width="2"/>'+PT.map((p,k)=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="11" fill="'+COL[k]+'"/><text x="'+p[0]+'" y="'+(p[1]+4)+'" fill="#fff" font-size="12" text-anchor="middle">'+(k+1)+"</text>").join("")+'</svg><div class="leg">'+LG.map((l,k)=>'<div><i style="background:'+COL[k]+'">'+(k+1)+"</i>"+arw(l)+"</div>").join("")+'</div><div class="sub">Schematic only, not to scale · رسم تقريبي</div>',
+m12:()=>'<div class="pace">'+[["التحقيق","Tahqiq","#3d8fb5"],["الترتيل","Tartil","#2f9e6e"],["التدوير","Tadwir","#c9971c"],["الحدر","Hadr","#e07a5f"]].map(a=>'<div style="background:'+a[2]+'"><span class="ar">'+a[0]+"</span>"+a[1]+"</div>").join("")+'</div><div class="sub" style="text-align:center">Slowest → Fastest · من الأبطأ إلى الأسرع</div>'};
+const $=id=>document.getElementById(id);
+const arw=s=>s.replace(/[\u0600-\u06FF]+(?:[\s\u00ab\u00bb\ufd3e\ufd3f][\u0600-\u06FF]+)*/g,m=>'<span class="ar">'+m+'</span>');
+let st={t:{},m:[],best:0};try{Object.assign(st,JSON.parse(localStorage.getItem("tqp")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("tqp",JSON.stringify(st))}catch(e){}};
+try{const th=localStorage.getItem("tqt");if(th)document.documentElement.dataset.theme=th}catch(e){}
+$("tg").onclick=()=>{const d=document.documentElement,n=(d.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"))=="dark"?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("tqt",n)}catch(e){}};
+const cnt={};Q.forEach(q=>cnt[q[0]]=(cnt[q[0]]||0)+1);
+const mast=id=>{const a=st.t[id];return a&&a[1]?Math.round(a[0]/a[1]*100):null};
+let sel=new Set(),len=10,qs=[],i=0,sc=0,miss=[],streak=0,run={};
+const shuf=a=>{a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a};
+const view=v=>["setup","study","quiz","res"].forEach(x=>$(x).classList.toggle("hide",x!=v));
+T.forEach(([id,a,e])=>{const b=document.createElement("button");b.className="chip";b.dataset.id=id;b.setAttribute("aria-pressed","false");
+ b.innerHTML='<span class="r"><span class="ck">✓</span><span><span class="ar nm">'+a+'</span><small>'+e+" · "+cnt[id]+' Q · <em class="ms"></em></small></span></span><div class="mb"><i></i></div>';
+ b.onclick=()=>{sel.has(id)?sel.delete(id):sel.add(id);home()};$(id[0]=="m"?"g1":"g2").appendChild(b)});
+document.querySelectorAll(".gt").forEach(b=>b.onclick=()=>{const ids=T.filter(t=>t[0][0]==b.dataset.g).map(t=>t[0]);const all=ids.every(x=>sel.has(x));ids.forEach(x=>all?sel.delete(x):sel.add(x));home()});
+$("sg").onclick=e=>{const b=e.target.closest("button");if(!b)return;len=+b.dataset.n;document.querySelectorAll("#sg button").forEach(x=>x.setAttribute("aria-pressed",x==b))};
+$("mo").onchange=home;
+$("wk").onclick=()=>{sel.clear();T.forEach(t=>{const m=mast(t[0]);if(m===null||m<70)sel.add(t[0])});home()};
+$("rst").onclick=()=>{const b=$("rst");if(b.dataset.c){st={t:{},m:[],best:0};save();delete b.dataset.c;b.textContent="Reset · مسح";home()}else{b.dataset.c=1;b.textContent="Tap again to confirm · اضغط للتأكيد";setTimeout(()=>{delete b.dataset.c;b.textContent="Reset · مسح"},4000)}};
+const pool=()=>Q.filter(q=>sel.has(q[0])&&(!$("mo").checked||st.m.includes(q[2])));
+function home(){
+ document.querySelectorAll(".chip").forEach(c=>{const id=c.dataset.id,m=mast(id);c.setAttribute("aria-pressed",sel.has(id));c.querySelector(".ms").textContent=m===null?"new · جديد":m+"% mastery";c.querySelector(".mb i").style.width=(m||0)+"%"});
+ let r=0,s=0;Object.values(st.t).forEach(a=>{r+=a[0];s+=a[1]});const p=s?Math.round(r/s*100):0,n=pool().length;
+ $("or").style.setProperty("--p",p);$("op").textContent=s?p+"%":"–";
+ $("ot").innerHTML=s?"<b>"+s+"</b> answers · <b>"+st.m.length+"</b> to review · best streak <b>"+st.best+"</b> 🔥":"Take a quiz to start tracking your mastery. · ابدأ اختبارًا لتتبع تقدمك";
+ $("p1").textContent=Q.length+" questions · أسئلة";$("p2").textContent=T.length+" topics · مواضيع";$("p3").textContent=s?"Mastery "+p+"%":"Study + Quiz";
+ $("cnt").textContent=n+(n==1?" question":" questions")+" · "+sel.size+(sel.size==1?" topic":" topics");$("go").disabled=!n;$("st").disabled=!sel.size}
+home();
+function start(list,keep){qs=keep?list:shuf(list).slice(0,len||list.length);i=0;sc=0;miss=[];streak=0;run={};view("quiz");scrollTo(0,0);show()}
+$("go").onclick=()=>start(pool());
+$("ex").onclick=()=>{view("setup");home()};
+function show(){
+ const q=qs[i];$("pb").style.width=(i/qs.length*100)+"%";$("qn").textContent="Question "+(i+1)+" of "+qs.length+" · السؤال "+(i+1);$("sk").textContent=streak>1?"🔥 "+streak:"";
+ const opts=shuf(q[3].map((t,k)=>[t,k==q[4]]));
+ $("qc").innerHTML='<span class="badge'+(q[1]?" p":"")+'">'+arw(q[1]?PR:TH)+'</span><p class="q">'+arw(q[2])+'</p><div id="os"></div><div id="fb"></div>';
+ opts.forEach(([t,ok],n)=>{const b=document.createElement("button");b.className="opt";b.innerHTML="<b>"+"ABCD"[n]+'</b><span class="v">'+arw(t.replace("|"," · "))+"</span>";b.onclick=()=>{
+  if(document.querySelector(".opt.ok,.opt.no"))return;
+  document.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+  const a=st.t[q[0]]||[0,0];a[1]++;run[q[0]]=run[q[0]]||[0,0];run[q[0]][1]++;
+  if(ok){sc++;a[0]++;run[q[0]][0]++;streak++;st.best=Math.max(st.best,streak);st.m=st.m.filter(x=>x!=q[2]);b.classList.add("ok")}
+  else{streak=0;miss.push(q);if(!st.m.includes(q[2]))st.m.push(q[2]);b.classList.add("no");document.querySelectorAll(".opt").forEach((x,m)=>{if(opts[m][1])x.classList.add("ok")})}
+  st.t[q[0]]=a;save();$("sk").textContent=streak>1?"🔥 "+streak:"";
+  $("fb").innerHTML='<div class="fb '+(ok?"ok":"no")+'"><b>'+(ok?"✓ Correct · صحيح":"✕ Not quite · غير صحيح")+"</b><br>"+arw(q[5])+'</div><div class="row"><button class="btn" id="nx">'+(i+1<qs.length?"Next · التالي":"Results · النتيجة")+"</button></div>";
+  $("nx").onclick=()=>{i++;i<qs.length?show():fin()};$("nx").focus()};$("os").appendChild(b)})}
+function fin(){
+ view("res");scrollTo(0,0);
+ const p=Math.round(sc/qs.length*100),m=p>=90?"ما شاء الله · Excellent!":p>=70?"جيد · Good work":"واصل التدريب · Keep practicing";
+ const tr=Object.keys(run).map(id=>{const t=T.find(x=>x[0]==id),v=Math.round(run[id][0]/run[id][1]*100);return'<div class="tb"><span>'+arw(t[1])+'</span><div class="mb"><i style="width:'+v+'%"></i></div><b>'+run[id][0]+"/"+run[id][1]+"</b></div>"}).join("");
+ $("res").innerHTML='<div class="rs"><h2>Results · النتيجة</h2><div class="ring" style="--p:'+p+';--s:136px"><b>'+p+'%</b></div><p>'+sc+" / "+qs.length+" · "+arw(m)+"</p></div>"+tr+(miss.length?"<h3>Review · للمراجعة</h3>"+miss.map(q=>'<div class="miss">'+arw(q[2])+"<br><b>→ "+arw(q[3][q[4]].replace("|"," · "))+"</b></div>").join(""):"")+'<div class="row">'+(miss.length?'<button class="btn" id="rm">Retry missed · أعد الأخطاء</button>':"")+'<button class="btn g" id="hm">Home · الرئيسية</button></div>';
+ if(miss.length)$("rm").onclick=()=>start(miss.slice(),1);
+ $("hm").onclick=()=>{view("setup");home()}}
+// Study slides
+let sl=[],si=0;
+function build(ids){sl=[];T.filter(t=>ids.has(t[0])).forEach(t=>{const L=S[t[0]]||[];for(let k=0;k<L.length;k+=3)sl.push({t,l:L.slice(k,k+3),v:k?0:V[t[0]],n:k/3+1,N:Math.ceil(L.length/3)});sl.push({t,chk:1})})}
+$("st").onclick=()=>{build(sel);si=0;view("study");scrollTo(0,0);slide()};
+$("sx").onclick=()=>{view("setup");home()};
+$("pv").onclick=()=>{if(si>0){si--;slide()}};
+$("nx2").onclick=()=>{if(si<sl.length-1){si++;slide()}else{view("setup");home()}};
+function slide(){
+ const s=sl[si],h='<h2>'+arw(s.t[1])+'</h2><div class="sub">'+s.t[2]+(s.chk?"":" · "+s.n+"/"+s.N)+"</div>";
+ $("sn").textContent="Slide "+(si+1)+" of "+sl.length+" · شريحة "+(si+1);$("sp").style.width=((si+1)/sl.length*100)+"%";
+ if(s.chk){const m=mast(s.t[0]);$("sc").innerHTML=h+'<div class="rs"><h3>Progress check · فحص التقدم</h3><div class="ring" style="--p:'+(m||0)+'"><b>'+(m===null?"–":m+"%")+'</b></div><p>Answer 3 quick questions on this topic. · أجب عن ٣ أسئلة سريعة</p><button class="btn" id="qc3">Quick check · فحص سريع</button></div>';
+  $("qc3").onclick=()=>start(shuf(Q.filter(q=>q[0]==s.t[0])).slice(0,3),1)}
+ else $("sc").innerHTML=h+(s.v?s.v():"")+s.l.map(x=>{const[a,e]=x.split("|");return'<div class="ln"><span class="ar">'+arw(a)+"</span><small>"+arw(e||"")+"</small></div>"}).join("");
+ $("dt").innerHTML=sl.map((_,k)=>'<i class="'+(k==si?"on":"")+'"></i>').join("");$("pv").disabled=!si;$("nx2").textContent=si<sl.length-1?"Next · التالي →":"Finish · إنهاء"}
+addEventListener("keydown",e=>{
+ if(!$("quiz").classList.contains("hide")){const k="1234abcd".indexOf(e.key.toLowerCase());if(k>-1){const o=document.querySelectorAll(".opt")[k%4];if(o&&!o.disabled)o.click()}else if(e.key=="Enter"&&$("nx"))$("nx").click()}
+ else if(!$("study").classList.contains("hide")){if(e.key=="ArrowRight")$("nx2").click();if(e.key=="ArrowLeft")$("pv").click()}});
+</script></body></html>
